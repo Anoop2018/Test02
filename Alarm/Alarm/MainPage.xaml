@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Alarm"
+             xmlns:custom="clr-namespace:Alarm.CustomControls;assembly=Alarm"
+             x:Class="Alarm.MainPage">
+
+  <!--<Label Text="Alarm!"
+           VerticalOptions="CenterTop"
+           HorizontalOptions="CenterTop" />-->
+  <!--<StackLayout x:Name="timepicker">
+  <Label Text="! Alarm !" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="16" FontAttributes="Bold" BackgroundColor="Aqua"
+               TextColor="Black"/>
+    <TimePicker x:Name="tp" ></TimePicker>
+    <Button Text="+" TextColor="Black" FontSize="30" BorderRadius="10" BorderWidth="2" BorderColor="Black" HorizontalOptions="Center" Clicked="button_Clicked" />
+    <Entry x:Name="AlarmName" Placeholder="Alarm Name"/>
+  <StackLayout BackgroundColor="Black" HeightRequest="250" HorizontalOptions="FillAndExpand"/>
+    
+  </StackLayout>-->
+  <StackLayout>
+
+
+    <Label Text="Radio Group Demo1" VerticalOptions="Center" HorizontalOptions="Center" />
+
+    <custom:BindableRadioGroup x:Name="Alarm"
+        ItemsSource="{Binding Values}"
+        SelectedIndex="{Binding SelectedIndex}" VerticalOptions="Start" />
+
+    <Label Text="Selected Item is:" VerticalOptions="Center" HorizontalOptions="Center"/>
+    <Label x:Name="txtSelected" Text="" VerticalOptions="Center" HorizontalOptions="Center" />
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Select The Index" VerticalOptions="Center" HorizontalOptions="Center" />
+      <Entry Text="{Binding SelectedIndex}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+    </StackLayout>
+  </StackLayout>
+    
+
+
+
+</ContentPage>
